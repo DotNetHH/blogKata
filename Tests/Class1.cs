@@ -127,6 +127,19 @@ namespace Tests
 
         }
 
+        [Test]
+        public void Get_Edit_View_Should_Return_Edit_View()
+        {
+            var homeController = new HomeController();
+            homeController.Create(new BlogEntry("UniqueTitle"));
+            var result = homeController.Edit("UniqueTitle") as ViewResult;
+            var blogEntry = result.Model as BlogEntry;
+
+            Assert.AreEqual("UniqueTitle", blogEntry.Title);
+
+
+        }
+
 
     }
 }

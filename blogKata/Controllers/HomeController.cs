@@ -39,5 +39,11 @@ namespace blogKata.Controllers
             var blogEntry = currentBlog.Entries.FirstOrDefault(x => x.Title == uniquetitle);
             return this.View(blogEntry);
         }
+
+        public ViewResult Edit(string uniquetitle)
+        {
+            var blogEntry = currentBlog.Entries.FirstOrDefault(x => x.Title == uniquetitle);
+            return this.View(blogEntry);
+        }
     }
 }
