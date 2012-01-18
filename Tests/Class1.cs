@@ -140,6 +140,19 @@ namespace Tests
 
         }
 
+        [Test]
+        public void Post_Edit_Should_Update_Blog_Model()
+        {
+            var homeController = new HomeController();
+            homeController.Create(new BlogEntry("UniqueTitle"));
+            var blogEntry = HomeController.currentBlog.Entries.First();
+            blogEntry.Body = "My Body";
+            homeController.Edit(blogEntry);
+            Assert.That(HomeController.currentBlog.Entries.First().Body, Is.EqualTo("My Body"));
+
+        }
+
+
 
     }
 }

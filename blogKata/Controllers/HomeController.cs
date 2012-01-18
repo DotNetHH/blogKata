@@ -45,5 +45,13 @@ namespace blogKata.Controllers
             var blogEntry = currentBlog.Entries.FirstOrDefault(x => x.Title == uniquetitle);
             return this.View(blogEntry);
         }
+
+        [HttpPost]
+        public ActionResult Edit(BlogEntry blogEntry)
+        {
+            var entity = currentBlog.Entries.FirstOrDefault(x => x.Title == blogEntry.Title);
+            entity.Body = blogEntry.Body;
+            return this.RedirectToAction("Detail", new { uniquetitle = entity.Title });
+        }
     }
 }
