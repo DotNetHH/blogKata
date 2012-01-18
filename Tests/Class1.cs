@@ -114,6 +114,19 @@ namespace Tests
             Assert.That(entries.Count(), Is.GreaterThan(0));
         }
 
+        [Test]
+        public void Details_View_Should_Return_Blog_Entry()
+        {
+            var homeController = new HomeController();
+
+            homeController.Create(new BlogEntry("UniqueTitle"));
+            var result = homeController.Detail("UniqueTitle");
+            var blogEntry = result.Model as BlogEntry;
+
+            Assert.AreEqual("UniqueTitle", blogEntry.Title);
+
+        }
+
 
     }
 }

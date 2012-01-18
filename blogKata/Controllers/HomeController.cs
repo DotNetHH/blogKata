@@ -33,5 +33,11 @@ namespace blogKata.Controllers
 
             return this.View(blogEntry);
         }
+
+        public ViewResult Detail(string uniquetitle)
+        {
+            var blogEntry = currentBlog.Entries.FirstOrDefault(x => x.Title == uniquetitle);
+            return this.View(blogEntry);
+        }
     }
 }

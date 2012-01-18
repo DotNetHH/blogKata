@@ -1,0 +1,30 @@
+﻿@model blogKata.Models.BlogEntry
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+<fieldset>
+    <legend>BlogEntry</legend>
+
+    <div class="display-label">CreatedAt</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedAt)
+    </div>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">Body</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Body)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
