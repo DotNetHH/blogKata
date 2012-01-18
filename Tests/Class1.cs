@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
@@ -102,7 +103,16 @@ namespace Tests
         }
 
 
+        [Test]
+        public void DefaultView_Should_Return_BlogEntries()
+        {
+            var homeController = new HomeController();
+            homeController.Create(new BlogEntry("My BlogEntry"));
+            var result = homeController.Index() as ViewResult;
 
+            var entries = result.Model as IEnumerable<BlogEntry>;
+            Assert.That(entries.Count(), Is.GreaterThan(0));
+        }
 
 
     }

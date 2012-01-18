@@ -18,7 +18,7 @@ namespace blogKata.Controllers
         {
             ViewBag.Title = "Welcome to my blog";
             
-            return View();
+            return View(currentBlog.Entries);
         }
 
         public ViewResult Create()

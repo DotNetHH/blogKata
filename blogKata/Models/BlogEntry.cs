@@ -4,6 +4,11 @@
 
     public class BlogEntry
     {
+        public BlogEntry()
+            : this(string.Empty)
+        {
+        }
+
         public BlogEntry(string title)
         {
             Title = title;
