@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace blogKata.Controllers
 {
+    using blogKata.Models;
+
     public class HomeController : Controller
     {
         //
@@ -18,8 +20,15 @@ namespace blogKata.Controllers
             return View();
         }
 
-        
+        public ViewResult Create()
+        {
+            return this.View(new BlogEntry(string.Empty));
+        }
 
-        
+        [HttpPost]
+        public ActionResult Create(BlogEntry blogEntry)
+        {
+            return this.View(blogEntry);
+        }
     }
 }

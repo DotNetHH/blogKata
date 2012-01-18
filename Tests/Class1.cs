@@ -73,13 +73,16 @@ namespace Tests
             Assert.AreEqual(1, blog.Entries.Count());
         }
 
-        //[Test]
-        //public void Post_Create_Action_Added_Blog_Entry_To_Blog()
-        //{
-        //    var homeController = new HomeController();
-        //    var result = homeController.Index() as ViewResult;
-        //    Assert.AreEqual(string.Empty, result.ViewName);
-        //}
+        [Test]
+        public void Post_Create_Action_Added_Blog_Entry_To_Blog()
+        {
+            var homeController = new HomeController();
+            var result = homeController.Create() as ViewResult;
+            var model = result.Model as BlogEntry;
+
+            Assert.AreEqual(string.Empty, model.Title);
+        }
+
 
 
     }
