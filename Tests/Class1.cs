@@ -6,6 +6,7 @@ using NUnit.Framework;
 
 namespace Tests
 {
+    using System.Collections.ObjectModel;
     using System.Web.Mvc;
 
     using blogKata.Controllers;
@@ -32,5 +33,31 @@ namespace Tests
 
         }
 
+
+        [Test]
+        public void Blog_Entry_Count_Is_Zero_On_Startup()
+        {
+            var blog = new Blog();
+            Assert.AreEqual(0, blog.Entries.Count());
+        }
+    }
+
+    public class Blog
+    {
+
+        private ICollection<BlogEntry> _entries = new Collection<BlogEntry>();
+
+        public IEnumerable<BlogEntry> Entries
+        {
+            get
+            {
+                return _entries;
+            }
+            
+        }
+    }
+
+    public class BlogEntry
+    {
     }
 }
