@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogKata", "blogKata\blogKata.csproj", "{2ABE0CD2-8850-4F89-A17A-ADE43982FC6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{0958B663-3BD2-4590-87CF-F41894149CB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{2ABE0CD2-8850-4F89-A17A-ADE43982FC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ABE0CD2-8850-4F89-A17A-ADE43982FC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ABE0CD2-8850-4F89-A17A-ADE43982FC6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0958B663-3BD2-4590-87CF-F41894149CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0958B663-3BD2-4590-87CF-F41894149CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0958B663-3BD2-4590-87CF-F41894149CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0958B663-3BD2-4590-87CF-F41894149CB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
