@@ -74,14 +74,34 @@ namespace Tests
         }
 
         [Test]
-        public void Post_Create_Action_Added_Blog_Entry_To_Blog()
+        public void Get_Create_Action_Creates_CreationView()
         {
             var homeController = new HomeController();
             var result = homeController.Create() as ViewResult;
             var model = result.Model as BlogEntry;
 
             Assert.AreEqual(string.Empty, model.Title);
+        } 
+        
+        [Test]
+        public void Post_Create_Action_Added_Blog_Entry_To_Blog()
+        {
+            var homeController = new HomeController();
+            var blog = HomeController.currentBlog;
+
+            var model = new BlogEntry(string.Empty);
+
+            Assert.AreEqual(string.Empty, model.Title);
+
+            model.Title = "My Title";
+            model.Body = "My Body";
+
+            var result = homeController.Create(model) as ViewResult;
+
+            Assert.That(blog.Entries.Count(), Is.GreaterThan(0));
         }
+
+
 
 
 

@@ -10,6 +10,7 @@ namespace blogKata.Controllers
 
     public class HomeController : Controller
     {
+        public static Blog currentBlog = new Blog();
         //
         // GET: /Home/
 
@@ -28,6 +29,8 @@ namespace blogKata.Controllers
         [HttpPost]
         public ActionResult Create(BlogEntry blogEntry)
         {
+            currentBlog.Add(blogEntry);
+
             return this.View(blogEntry);
         }
     }
