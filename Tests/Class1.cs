@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
 
 namespace Tests
 {
-    using System.Collections.ObjectModel;
     using System.Web.Mvc;
 
     using blogKata.Controllers;
+    using blogKata.Models;
 
     [TestFixture]
     public class Class1
@@ -40,24 +39,21 @@ namespace Tests
             var blog = new Blog();
             Assert.AreEqual(0, blog.Entries.Count());
         }
-    }
 
-    public class Blog
-    {
-
-        private ICollection<BlogEntry> _entries = new Collection<BlogEntry>();
-
-        public IEnumerable<BlogEntry> Entries
+        [Test]
+        public void BlogEntry_Title_Is_Provided_Title_On_Creation()
         {
-            get
-            {
-                return _entries;
-            }
-            
-        }
-    }
+            var blogEntry = new BlogEntry(string.Empty);
 
-    public class BlogEntry
-    {
+            Assert.AreEqual(string.Empty, blogEntry.Title);
+        }
+        
+        [Test]
+        public void BlogEntry_Body_Is_Empty_On_Creation()
+        {
+            var blogEntry = new BlogEntry(string.Empty);
+
+            Assert.AreEqual(string.Empty, blogEntry.Body);
+        }
     }
 }
