@@ -62,6 +62,25 @@ namespace Tests
             var blogEntry = new BlogEntry(string.Empty);
 
             Assert.That(blogEntry.CreatedAt,Is.GreaterThan(default(DateTime)));
+        }        
+        
+        [Test]
+        public void BlogEntry_is_Added_to_Blog()
+        {
+            var blogEntry = new BlogEntry(string.Empty);
+            var blog = new Blog();
+            blog.Add(blogEntry);
+            Assert.AreEqual(1, blog.Entries.Count());
         }
+
+        //[Test]
+        //public void Post_Create_Action_Added_Blog_Entry_To_Blog()
+        //{
+        //    var homeController = new HomeController();
+        //    var result = homeController.Index() as ViewResult;
+        //    Assert.AreEqual(string.Empty, result.ViewName);
+        //}
+
+
     }
 }

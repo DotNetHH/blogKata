@@ -14,7 +14,11 @@
             {
                 return _entries;
             }
-            
+        }
+
+        public void Add(BlogEntry blogEntry)
+        {
+            _entries.Add(blogEntry);
         }
     }
 }
