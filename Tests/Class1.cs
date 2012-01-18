@@ -55,5 +55,13 @@ namespace Tests
 
             Assert.AreEqual(string.Empty, blogEntry.Body);
         }
+
+        [Test]
+        public void BlogEntry_TimeStamp_Is_Bigger_Then_Default()
+        {
+            var blogEntry = new BlogEntry(string.Empty);
+
+            Assert.That(blogEntry.CreatedAt,Is.GreaterThan(default(DateTime)));
+        }
     }
 }
